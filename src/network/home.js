@@ -5,3 +5,14 @@ export function getHomeRequest(){
    url:'/home/multidata'
   })
 }
+
+export function getHomeData(type,page){
+  return request({
+    url:'/home/data',
+    // 为url添加参数
+    params:{
+      type,
+      page
+    }
+  })
+}
