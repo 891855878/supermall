@@ -1,8 +1,8 @@
 <template>
-  <div class="goods-item">
-    <img :src="goodsitem.show.img" alt="">
+  <div class="goods-item" @click="itemClick">
+    <img v-lazy="showImage" alt=""  @load="imageLoad">
     <div class="jiesao">
-    <div class="title">{{goodsitem.title}}</div>
+    <div class="title2">{{goodsitem.title}}</div>
     <div class="jies"><span class="price">{{goodsitem.price}}</span><span class="price1">{{goodsitem.cfav}}</span></div>
     </div>
   </div>
@@ -17,11 +17,33 @@ export default {
         return {}
       }
     }
+  },
+  computed: {
+    showImage(){
+      return this.goodsitem.image || this.goodsitem.show.img
+    }
+  },
+  methods: {
+    imageLoad(){
+     this.$bus.$emit('itemImageLoad')
+      // console.log(123213);
+    },
+    itemClick(){
+      // console.log(this.goodsitem.iid);
+      this.$router.push({
+        path:'/detail',
+        query:{
+          iid:this.goodsitem.iid
+        }
+      })
+      // this.$router.push('/detail/'+this.goodsitem.iid)
+    }
+
   }
 }
 </script>
 
-<style>
+<style  scoped>
   .goods-item{
     width:100%;
     padding-bottom: 40px;
@@ -31,7 +53,7 @@ export default {
     width: 100%;
     border-radius: 5px;
   }
-  .title{
+  .title2{
     width: 100%;
     overflow: hidden;
     white-space: nowrap;

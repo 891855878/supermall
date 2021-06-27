@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style  scoped>
   .goods{
     display: flex;
     /* flex布局后不在一行显示 */

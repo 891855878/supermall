@@ -54,5 +54,4 @@ export default {
   {
     width:25px; height: 25px;vertical-align: middle; margin-top: 3px; margin-bottom: 1px;
   }
-
 </style>
