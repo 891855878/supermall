@@ -24,5 +24,9 @@ module.exports = {
               'views': '@/views'
           }
       }
-  }
+  },
+  //允许内网穿透
+  devServer: {
+    disableHostCheck: true
+    }
 }

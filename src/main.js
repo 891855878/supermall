@@ -9,6 +9,7 @@ import vueLazyLoad from 'vue-lazyload'
 Vue.use(toast)
 Vue.config.productionTip = false
 FastClick.attach(document.body)
+// 使用图片的懒加载
 Vue.use(vueLazyLoad,{
   loading: require('./assets/img/common/lazy.gif')
 })
