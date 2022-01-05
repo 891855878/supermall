@@ -3,6 +3,7 @@
     <nar-bar class="profile">
       <div slot="center">我的</div>
     </nar-bar>
+    <h2>我的</h2>
   </div>
 </template>
 
